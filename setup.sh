@@ -11,6 +11,13 @@ https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/
 sudo apt update && \
 sudo apt install -y gh
 
+echo "> Adding SSH login to gitlab"
+cat <<EOT >> ~/.ssh/config
+Host gitlab.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/anytimes_rsa
+EOT
+
 echo ""
 echo "> Installing docker"
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common && \
