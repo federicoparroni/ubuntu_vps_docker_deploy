@@ -15,7 +15,7 @@ echo "> Adding SSH login to gitlab"
 cat <<EOT >> ~/.ssh/config
 Host gitlab.com
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/anytimes_rsa
+  IdentityFile ~/.ssh/<YOUR_KEY>
 EOT
 
 echo ""
